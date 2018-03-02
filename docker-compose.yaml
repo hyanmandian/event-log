@@ -10,5 +10,22 @@ mq:
     RABBITMQ_DEFAULT_USER: "admin"
     RABBITMQ_DEFAULT_PASS: "admin"
 
+db:
+  image: mongo:3
+  expose:
+    - "27017"
+
 producer:
   build: producer/.
+
+consumer:
+  build: consumer/.
+  ports:
+    - 3000:3000
+  environment:
+    PORT: 3000
+    RABBIT_URL: "mq"
+    MONGO_URL: "db"
+  links:
+    - db
+    - mq

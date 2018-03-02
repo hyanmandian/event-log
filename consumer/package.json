@@ -4,6 +4,13 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
-    "harvesterjs": "^3.2.3"
+    "amqplib": "^0.5.2",
+    "caller-id": "^0.1.0",
+    "harvesterjs": "^3.2.3",
+    "joi": "^13.1.2",
+    "string": "^3.3.3"
+  },
+  "scripts": {
+    "start": "node index.js"
   }
 }
