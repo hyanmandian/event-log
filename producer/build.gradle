@@ -28,5 +28,7 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-web')
 	compile('org.apache.camel:camel-spring-boot-starter:2.20.2')
 	compile('org.codehaus.groovy:groovy')
+	compile group: 'org.apache.camel', name: 'camel-rabbitmq', version: '2.20.2'
+	compile group: 'org.apache.camel', name: 'camel-jackson', version: '2.20.2'
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
