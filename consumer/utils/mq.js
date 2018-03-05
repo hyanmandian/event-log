@@ -1,7 +1,4 @@
 const amqp = require('amqplib');
-const callerId = require('caller-id');
-const S = require('string');
-const os = require('os');
 
 let queues = {};
 
@@ -11,13 +8,13 @@ function recordCallback(queueName, cb) {
   queues[queueName] = cb;
 }
 
-module.exports = (url) => {
+module.exports = ({ url, exchange }) => {
   const mqConn = amqp.connect(url);
   const mqChannel = mqConn.then(conn => conn.createChannel());
 
   return {
     onChange(cb) {
-      const queueName = `event-log.${S(S(callerId.getData().filePath).splitRight('/', 1)[1]).strip(".js")}`;
+      const queueName = `consumer.queue`;
 
       let channel;
 
@@ -25,7 +22,7 @@ module.exports = (url) => {
         channel = _channel;
         return channel.assertQueue(queueName, { durable: true, exclusive: false });
       }).then(() => {
-        return channel.bindQueue(queueName, mq.exchange);
+        return channel.bindQueue(queueName, exchange);
       }).then(() => {
         return recordCallback(queueName, cb);
       }).then(() => {

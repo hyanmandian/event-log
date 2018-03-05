@@ -6,7 +6,8 @@
   "dependencies": {
     "amqplib": "^0.5.2",
     "caller-id": "^0.1.0",
-    "harvesterjs": "^3.2.3",
+    "harvesterjs": "2.3.7",
+    "http-as-promised": "^2.0.1",
     "joi": "^13.1.2",
     "string": "^3.3.3"
   },
