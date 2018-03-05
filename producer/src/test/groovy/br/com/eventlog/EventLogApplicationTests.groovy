@@ -1,4 +1,4 @@
-package br.com.eventlog.eventlog
+package br.com.eventlog
 
 import org.junit.Test
 import org.junit.runner.RunWith

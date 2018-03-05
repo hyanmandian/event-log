@@ -17,6 +17,12 @@ db:
 
 producer:
   build: producer/.
+  ports:
+    - "8080:8080"
+  environment:
+    RABBIT_URL: "mq"
+  links:
+    - mq
 
 consumer:
   build: consumer/.
@@ -28,4 +34,4 @@ consumer:
     MONGO_URL: "db"
   links:
     - db
-    - mq
+
