@@ -12,6 +12,6 @@ class LogRoute extends RouteBuilder {
         from("direct:toLog")
                 .marshal()
                 .json(JsonLibrary.Jackson)
-                .to("rabbitmq://${System.getenv("RABBIT_URL")}:5672/logs?queue=producer.queue&exchangeType=topic&username=admin&password=admin&autoDelete=false")
+                .to("rabbitmq://${System.getenv("RABBIT_URL")}:5672/logs?exchangeType=topic&username=admin&password=admin&autoDelete=false")
     }
 }

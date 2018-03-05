@@ -6,8 +6,6 @@ import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RestController
 
-import javax.ws.rs.core.Response
-
 @RestController
 class LogApi {
 
@@ -15,9 +13,9 @@ class LogApi {
     private ProducerTemplate producerTemplate;
 
     @PostMapping("/transaction")
-    Response newTransaction(@RequestBody TransactionDTO transaction) {
+    TransactionDTO newTransaction(@RequestBody TransactionDTO transaction) {
         producerTemplate.sendBody('direct:toLog', transaction)
-        return Response.accepted(transaction).build()
+        return transaction;
     }
 
 }
@@ -30,9 +28,9 @@ class TransactionDTO {
     private Integer conta
     private Integer cpfCnpj
     private Integer celular
-    private String service
+    private String servico
     private String message
-    private Date createAt
+    private Date createdAt
 
     String getNome() {
         return nome
@@ -82,12 +80,12 @@ class TransactionDTO {
         this.celular = celular
     }
 
-    String getService() {
-        return service
+    String getServico() {
+        return servico
     }
 
-    void setService(String service) {
-        this.service = service
+    void setServico(String service) {
+        this.servico = service
     }
 
     String getMessage() {
@@ -98,11 +96,11 @@ class TransactionDTO {
         this.message = message
     }
 
-    Date getCreateAt() {
-        return createAt
+    Date getCreatedAt() {
+        return createdAt
     }
 
-    void setCreateAt(Date createAt) {
-        this.createAt = createAt
+    void setCreatedAt(Date createAt) {
+        this.createdAt = createAt
     }
 }
