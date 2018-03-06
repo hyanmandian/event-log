@@ -5,11 +5,11 @@
   "license": "MIT",
   "dependencies": {
     "amqplib": "^0.5.2",
-    "caller-id": "^0.1.0",
-    "harvesterjs": "2.3.7",
-    "http-as-promised": "^2.0.1",
-    "joi": "^13.1.2",
-    "string": "^3.3.3"
+    "express": "^4.16.2",
+    "fortune": "^5.4.2",
+    "fortune-http": "^1.2.8",
+    "fortune-json-api": "^2.1.2",
+    "fortune-mongodb": "^1.1.6"
   },
   "scripts": {
     "start": "node index.js"

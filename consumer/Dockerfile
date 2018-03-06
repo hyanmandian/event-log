@@ -1,7 +1,4 @@
-FROM node:6.11.0
-
-RUN apt-get update
-RUN apt-get install libkrb5-dev -y
+FROM node:latest
 
 RUN mkdir /usr/src/app
 WORKDIR /usr/src/app

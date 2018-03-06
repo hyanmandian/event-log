@@ -1,13 +1,11 @@
-const Joi = require('joi');
-
-module.exports = (app) => app.resource('transaction', {
-    agencia: Joi.number(),
-    conta: Joi.number(),
-    cpfCnpj: Joi.number(),
-    celular: Joi.number(),
-    nome: Joi.string(),
-    email: Joi.string(),
-    message: Joi.string(),
-    service: Joi.string(),
-    createdAt: Joi.date(),
-});
+module.exports = {
+    agencia: { type: Number },
+    conta: { type: Number },
+    cpfCnpj: { type: Number },
+    celular: { type: Number },
+    nome: { type: String },
+    email: { type: String },
+    message: { type: String },
+    servico: { type: String },
+    createdAt: { type: Date },
+};
