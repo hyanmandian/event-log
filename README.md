@@ -21,7 +21,7 @@ Just produce a message!
 
 ## Consumer
 
-Listen to MQ and save the log in MongoDB and implements [JSON API](http://jsonapi.org/).
+Listen to MQ, save the log in MongoDB and implements [JSON API](http://jsonapi.org/).
 For example, if you want to filter by `servico`, you just need to add `filter[servico]` query param with the value that you need.
 
 ```json
