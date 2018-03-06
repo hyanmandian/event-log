@@ -29,9 +29,13 @@ consumer:
   ports:
     - 3000:3000
   environment:
-    RABBIT_URL: "mq"
-    MONGO_URL: "mongodb://db:27017/transactions"
+    PORT: 3000
+    RABBIT_URL: "amqp://admin:admin@mq:5672"
+    MONGODB_URL: "mongodb://db:27017/logs"
+    EXCHANGE: "logs"
   links:
-    - db
+    - producer
     - mq
+    - db
+    
 

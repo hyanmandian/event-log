@@ -19,6 +19,30 @@ Just produce a message!
 }
 ```
 
+## Consumer
+
+- Listen MQ and save the log in MongoDB
+- Implements [JSON API](http://jsonapi.org/)
+
+```json
+// Hit http://localhost:3000/transactions
+{
+	...,
+	data: {
+		"nome": "Alex",
+		"email": "test@email.com",
+		"agencia": 123,
+		"conta": 987,
+		"cpfCnpj": 234,
+		"celular": 12345,
+		"servico": "Teste!",
+		"message": "essa mensagem é um test",
+		"createdAt": "2018-03-02T22:38:43.801"
+	}
+	...,
+}
+```
+
 ## Meta
 
 Alex Rocha - [about.me](http://about.me/alex.rochas)
